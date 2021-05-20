@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import { useState } from 'react';
+
+const formValsInit = {
+  name: '',
+  email: '',
+  password: '',
+  tos: false,
+};
+
+const formErrorsInit = {
+  name: '',
+  email: '',
+  password: '',
+  tos: false,
+};
+
+const dataInit = [];
 
 function App() {
+
+  const [formValues, setFormValues] = useState(formValsInit);
+  const [data, setdata] = useState(dataInit);
+  const [formErrors, setFormErrors] = useState(formErrorsInit);  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form />
     </div>
   );
-}
+};
 
 export default App;
