@@ -3,6 +3,11 @@ import React from 'react';
 export default function Form(props){
     const { values, submit, change, errors } = props;
 
+    const onSubmit = e => {
+        e.preventDefault()
+        // submit()
+    }
+
     const onChange = e => {
         const { name, value, type, checked } = e.target;
         const newValue = type === 'checkbox' ? checked : value;
@@ -10,7 +15,7 @@ export default function Form(props){
     };
 
     return (
-        <form className='form container'>
+        <form className='form container' onSubmit={onSubmit}>
 
             {/* Inputs */}
             <div className='form-group inputs'>
@@ -61,7 +66,18 @@ export default function Form(props){
             </div>
 
             {/* Submission */}
-            
+            <div className='form-group submit'>
+                <h3>New User</h3>
+
+                <button disabled={false}>Submit</button>
+
+                <div classname='errors'>
+                    <div>{errors.name}</div>
+                    <div>{errors.email}</div>
+                    <div>{errors.password}</div>
+                    <div>{errors.tos}</div>
+                </div>
+            </div>
         </form>
     )
 }

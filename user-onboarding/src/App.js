@@ -24,11 +24,17 @@ function App() {
   const [users, setUser] = useState(usersInit);
   const [formErrors, setFormErrors] = useState(formErrorsInit);  
 
+
+  const inputChange = (name, value) => {
+    setFormValues(
+      {...formValues, [name]: value}
+    )
+  }
   return (
     <div className="App">
       <Form 
         values={formValues}
-        // change={inputChange}
+        change={inputChange}
         // submit={formSubmit}
         errors={formErrors}
       />
