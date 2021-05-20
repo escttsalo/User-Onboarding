@@ -16,17 +16,22 @@ const formErrorsInit = {
   tos: false,
 };
 
-const dataInit = [];
+const usersInit = [];
 
 function App() {
 
   const [formValues, setFormValues] = useState(formValsInit);
-  const [data, setdata] = useState(dataInit);
+  const [users, setUser] = useState(usersInit);
   const [formErrors, setFormErrors] = useState(formErrorsInit);  
 
   return (
     <div className="App">
-      <Form />
+      <Form 
+        values={formValues}
+        // change={inputChange}
+        // submit={formSubmit}
+        errors={formErrors}
+      />
     </div>
   );
 };
