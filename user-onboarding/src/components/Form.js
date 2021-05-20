@@ -5,13 +5,13 @@ export default function Form(props){
 
     const onSubmit = e => {
         e.preventDefault()
-        // submit()
+        submit()
     }
 
     const onChange = e => {
         const { name, value, type, checked } = e.target;
         const newValue = type === 'checkbox' ? checked : value;
-        // change(name, newValue)
+        change(name, newValue)
     };
 
     return (
