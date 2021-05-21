@@ -53,5 +53,11 @@ describe('Form App', () => {
             form()
             .submit()
         })
+
+        it('Validate if input is left empty', () => {
+            nameInput()
+                .should('be.visible')
+                .should('not.be.empty')
+        })
     })
 })
